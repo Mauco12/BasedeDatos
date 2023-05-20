@@ -6,6 +6,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.ArrayList;
 import java.util.logging.SocketHandler;
 
 public class DemoLibroDB {
@@ -82,5 +83,20 @@ public class DemoLibroDB {
         return libro;
     }
 
+    public ArrayList<Libro> obtenerTodos(){
+        String sql = "SELECT * FROM libros";
+        ArrayList<Libro> resultado = new ArrayList<>();
+        try{
+            Statement stm = ConexionSingleton.getInstance("librosDB.db").getConnection().createStatement();
+            ResultSet rst = stm.executeQuery(sql);
+            while (rst.next()){
+                resultado.add(new Libro(rst.getInt(1),rst.getString(2),rst.getString(3)));
+            }
 
+        }catch (SQLException sqle){
+            System.out.println(sqle.getMessage());
+        }
+        return  resultado;
+
+    }
 }

@@ -12,13 +12,20 @@ public class Main {
 
         Libro libro = new Libro(1,"El Juego", "Desconocido");
 
-//        if(demo.insertarLibro(libro)){
-//            System.out.println("Se inserto correctamente");
-//
-//        }else{
-//            System.out.println("No se inserto");
-//        }
+        if(demo.insertarLibro(libro)){
+            System.out.println("Se inserto correctamente");
 
-        System.out.println(demo.buscarLibroPorId(5));
+        }else{
+            System.out.println("No se inserto");
+        }
+
+        System.out.println(demo.buscarLibroPorId(6));
+
+        System.out.println("-------------");
+        for (Libro tmp:demo.obtenerTodos()){
+            System.out.println("Libro: " + tmp);
+            System.out.println("Titulo: " + tmp.getTitulo());
+
+        }
     }
 }
