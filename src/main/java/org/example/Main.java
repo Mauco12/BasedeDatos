@@ -1,31 +1,31 @@
 package org.example;
 
 import org.example.modelo.Libro;
-import org.example.persistencia.DemoLibroDB;
+import org.example.persistencia.LibroDAO;
+
+import java.sql.SQLException;
 
 public class Main {
     public static void main(String[] args) {
-        DemoLibroDB demo = new DemoLibroDB();
-        demo.insertarStatement();
-        System.out.println("Con prepared");
-        demo.insertarPreparedStatement();
+        LibroDAO ldao = new LibroDAO();
 
-        Libro libro = new Libro(1,"El Juego", "Desconocido");
+        try {
+            Libro res = (Libro) ldao.buscarPorID("1");
+            System.out.println(res);
+            System.out.println("-------------");
+            for (Object lib: ldao.obetenerTodo()){
+                System.out.println((Libro)lib);
 
-        if(demo.insertarLibro(libro)){
-            System.out.println("Se inserto correctamente");
+            }
 
-        }else{
-            System.out.println("No se inserto");
-        }
-
-        System.out.println(demo.buscarLibroPorId(6));
-
-        System.out.println("-------------");
-        for (Libro tmp:demo.obtenerTodos()){
-            System.out.println("Libro: " + tmp);
-            System.out.println("Titulo: " + tmp.getTitulo());
-
+        }catch (SQLException sqle){
+            System.out.println("erros");
         }
     }
 }
+
+
+
+
+
+

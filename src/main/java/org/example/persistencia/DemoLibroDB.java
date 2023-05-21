@@ -30,6 +30,7 @@ public class DemoLibroDB {
 
 
     }
+
     public void insertarPreparedStatement(){
         String elTitulo = "El principito";
         String elAutor = "No me acuerdo";
@@ -48,13 +49,11 @@ public class DemoLibroDB {
 
     }
 
-
     public boolean insertarLibro(Libro libro){
         String sqlInsert = "INSERT INTO libros (titulo,autor) VALUES (?,?)";
         int rowCount = 0;
         try{
             PreparedStatement pstm = ConexionSingleton.getInstance("librosDB.db").getConnection().prepareStatement(sqlInsert);
-
             pstm.setString(1,libro.getTitulo());
             pstm.setString(2,libro.getAutor());
             rowCount = pstm.executeUpdate();
