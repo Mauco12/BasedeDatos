@@ -4,15 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="73ae677e-174f-4d3c-ad63-b567e768a8cb" name="Changes" comment="m4">
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/persistencia/InterfazDAO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/persistencia/LibroDAO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/org/example/persistencia/LibroDAOTest.java" afterDir="false" />
+    <list default="true" id="73ae677e-174f-4d3c-ad63-b567e768a8cb" name="Changes" comment="m5">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/librosDB.db" beforeDir="false" afterPath="$PROJECT_DIR$/librosDB.db" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/persistencia/DemoLibroDB.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/persistencia/DemoLibroDB.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/persistencia/LibroDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/persistencia/LibroDAO.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -161,7 +156,14 @@
       <option name="project" value="LOCAL" />
       <updated>1684623902935</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="m5">
+      <created>1684638239184</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1684638239184</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -180,7 +182,8 @@
     <MESSAGE value="m2" />
     <MESSAGE value="m3" />
     <MESSAGE value="m4" />
-    <option name="LAST_COMMIT_MESSAGE" value="m4" />
+    <MESSAGE value="m5" />
+    <option name="LAST_COMMIT_MESSAGE" value="m5" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

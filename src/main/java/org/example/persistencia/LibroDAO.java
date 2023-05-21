@@ -48,21 +48,32 @@ public class LibroDAO implements InterfazDAO {
 
     @Override
     public ArrayList obetenerTodo() throws SQLException {
+        String sql = "SELECT * FROM libros";
+        ArrayList<Libro> resultado = new ArrayList<>();
+
+        Statement stm = ConexionSingleton.getInstance("librosDB.db").getConnection().createStatement();
+        ResultSet rst = stm.executeQuery(sql);
+        while (rst.next()){
+            resultado.add(new Libro(rst.getInt(1),rst.getString(2),rst.getString(3)));
+
+        }
         return null;
     }
 
     @Override
     public Object buscarPorID(String id) throws SQLException {
-        String sql = "SELECT * FROM libros";
-        ArrayList<Libro> resultado = new ArrayList<>();
+        String sql = "SELECT * FROM libros WHERE id = ? ;";
+        Libro libro = null;
 
-            Statement stm = ConexionSingleton.getInstance("librosDB.db").getConnection().createStatement();
-            ResultSet rst = stm.executeQuery(sql);
-            while (rst.next()){
-                resultado.add(new Libro(rst.getInt(1),rst.getString(2),rst.getString(3)));
-            }
-        return  resultado;
+        PreparedStatement pstm = ConexionSingleton.getInstance("librosDB.db").getConnection().prepareStatement(sql);
+        pstm.setInt(1, Integer.parseInt(id));
+        ResultSet rst = pstm.executeQuery();
+        if(rst.next()){
+            libro = new Libro(rst.getInt(1),rst.getString(2), rst.getString(3));
 
+            return libro;
+        }
+        return null;
     }
 }
 
