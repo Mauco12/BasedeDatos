@@ -1,30 +1,13 @@
 package org.example;
 
-import org.example.modelo.Libro;
-import org.example.persistencia.LibroDAO;
-
-import java.sql.SQLException;
+import org.example.controlador.ControladorLibro;
+import org.example.vista.VentanaLibro;
 
 public class Main {
     public static void main(String[] args) {
-        LibroDAO ldao = new LibroDAO();
+        VentanaLibro view = new VentanaLibro("MVC y JDBC");
+        ControladorLibro controller = new ControladorLibro(view);
 
-        try {
-            Libro res = (Libro) ldao.buscarPorID("2");
-            System.out.println(res);
-            System.out.println("--------");
-            for (Object lib: ldao.obetenerTodo()) {
-                System.out.println((Libro)lib);
-            }
 
-        }catch (SQLException sqle){
-            System.out.println("erros");
-        }
     }
 }
-
-
-
-
-
-
